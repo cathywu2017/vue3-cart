@@ -1,14 +1,10 @@
 # vue3-cart
 
-This template should help get you started developing with Vue 3 in Vite.
+使用Vue3 與 Tailwind CSS 完成簡易購物車
 
-## Recommended IDE Setup
+## Demo
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+See [Demo](https://cathywu2017.github.io/vue3-cart/dist/).
 
 ## Project Setup
 
