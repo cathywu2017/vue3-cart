@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  @apply text-white rounded text-xs md:text-base disabled:bg-gray-300 disabled:hover:bg-gray-300
+}
+
+.red-button {
+  @apply button px-3 h-8 bg-red-600 hover:bg-red-500 disabled:bg-gray-300 disabled:hover:bg-gray-300
+}
+
+.image {
+  @apply md:w-40 md:h-40 w-24 h-24 bg-cover bg-center mb-5 flex-none
+}
