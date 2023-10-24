@@ -71,7 +71,7 @@ const handleSelectedAll = () => {
         :disabled="selectOpt.length === 0"
         @click="handleDelete()"
       >
-        刪除所選課程
+        刪除所選商品
       </button>
     </div>
     <div class="mb-6 border border-gray-300/100">
@@ -87,7 +87,7 @@ const handleSelectedAll = () => {
         <button class="hover:text-gray-300 pr-3 md:text-base text-sm" @click="handleDelete(d.id)">刪除</button>
       </WelcomeItem>
 
-      <div v-if="!data.length" class="p-4 text-center">目前購物車內沒有課程</div>
+      <div v-if="!data.length" class="p-4 text-center">目前購物車內沒有商品</div>
     </div>
     <div class="flex justify-between px-3">
       <p>
