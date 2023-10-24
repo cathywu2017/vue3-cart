@@ -17,7 +17,7 @@ onMounted(() => {
   <header class="bg-gray-800 text-white text-right">
     <div class="p-5">
       <nav>
-        <RouterLink to="/" class="p-5 hover:text-blue-500">課程列表</RouterLink>
+        <RouterLink to="/" class="p-5 hover:text-blue-500">販售列表</RouterLink>
         <RouterLink to="/cart" class="hover:text-blue-500">購物車({{ cartListLen }})</RouterLink>
       </nav>
     </div>

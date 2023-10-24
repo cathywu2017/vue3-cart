@@ -80,7 +80,7 @@ const handleSelectedAll = () => {
           <input class="md:mr-5 mx-3" type="checkbox" v-model="selectOpt" :value="d.id">
         </template>
         <template #image>
-          <div class="image" :style='{ backgroundImage: `url(${d.picture})` }'></div>
+          <div class="image" :style='{ backgroundImage: `url(${d.imageUrl})` }'></div>
         </template>
         <template #title>{{ d.title }}</template>
         <template #price>${{ d.price }}</template>

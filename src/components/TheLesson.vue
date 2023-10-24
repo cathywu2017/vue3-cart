@@ -8,9 +8,25 @@ const cartList = ref(JSON.parse(localStorage.getItem('cartList') ?? '[]'));
 
 // 取得課程列表
 const getLesson = () => {
-  fetch('https://run.mocky.io/v3/d7a29aba-9aac-4a97-b1b7-7b3d87ae8b7e')
+  fetch('https://vue-course-api.hexschool.io/api/cathyvueproject/products')
     .then((res) => res.json())
-    .then((d) => (data.value = d))
+    .then((d) => {
+      const newProducts = d.products.map((i, index) => {
+        let item = { ...i, status: '庫存正常' };
+
+        if ([2, 6].includes(index)) {
+          item.status = '預購中';
+        }
+
+        if ([3, 5, 8, 9].includes(index)) {
+          item.status = '尚未販售';
+        }
+
+        return item;
+      })
+      console.log(newProducts);
+      return data.value = newProducts;
+    })
     .catch((err) => error.value = err)
 };
 
@@ -43,7 +59,7 @@ onMounted(() => {
   <div class="flex flex-wrap md:p-8 p-3 border border-gray-300/100">
     <WelcomeItem v-for="item in data" :key="item.id">
       <template #image>
-        <div class="image" :style='{ backgroundImage: `url(${item.picture})` }'></div>
+        <div class="image" :style='{ backgroundImage: `url(${item.imageUrl})` }'></div>
       </template>
       <template #title>{{ item.title }}</template>
       <template #status>{{ item.status }}</template>
@@ -52,7 +68,7 @@ onMounted(() => {
       <button
         v-if="data.length"
         class="red-button content-center"
-        :disabled="isAddCart(item.id) || item.status === '尚未開始'"
+        :disabled="isAddCart(item.id) || item.status === '尚未販售'"
         @click="handleAddCart(item)"
       >
         加入購物車
